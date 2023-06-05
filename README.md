@@ -572,3 +572,84 @@ const styles = StyleSheet.create ({
 **Output:**
 
 ![FlexBox2](/Images/Flexbox2.png)
+
+## React Native ListView
+
+The ListView Component is an inbuilt React Native view component that displays a list of items in a vertically scrollable list. It requires a ListView.
+
+DataSource API to populate a simple array of data blobs and instantiate the ListView component with a data source and a renderRow callback.
+
+The major advantage of using the ListView Component over the ScrollView Component is that it overcomes the performance shortcomings of the ScrollView Component. 
+
+Behind the scenes, however, the ListView Component uses a ScrollView as its scrollable component. Thus, the ListView Component is an abstraction that optimizes the ScrollView Component.
+
+**Example:**
+
+**App.js**
+
+```
+
+import React, { Component } from 'react'
+import { Text, View, TouchableOpacity, StyleSheet } from 'react-native'
+   
+class List extends Component {
+   state = {
+      names: [
+         {
+            id: 0,
+            name: 'Ben',
+         },
+         {
+            id: 1,
+            name: 'Susan',
+         },
+         {
+            id: 2,
+            name: 'Robert',
+         },
+         {
+            id: 3,
+            name: 'Mary',
+         }
+      ]
+   }
+   alertItemName = (item) => {
+      alert(item.name)
+   }
+   render() {
+      return (
+         <View>
+            {
+               this.state.names.map((item, index) => (
+                  <TouchableOpacity
+                     key = {item.id}
+                     style = {styles.container}
+                     onPress = {() => this.alertItemName(item)}>
+                     <Text style = {styles.text}>
+                        {item.name}
+                     </Text>
+                  </TouchableOpacity>
+               ))
+            }
+         </View>
+      )
+   }
+}
+export default List
+
+const styles = StyleSheet.create ({
+   container: {
+      padding: 10,
+      marginTop: 3,
+      backgroundColor: '#d9f9b1',
+      alignItems: 'center',
+   },
+   text: {
+      color: '#4f603c'
+   }
+})
+
+```
+**OutPut:**
+
+![ListView](/Images/Listview.png)
