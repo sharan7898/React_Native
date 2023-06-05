@@ -301,3 +301,48 @@ const styles = StyleSheet.create({
 **Output:**
 
 ![props-example](/Images/Screenshot%20(56).png)
+
+#### Using props in our own Component
+
+We can also use props in our components. A single component can be used in many different places in the app by making slightly different properties in each place. To implement the props in our component, this.props is applied followed by the property.
+
+For example, one of the basic React Native components is Text. When we create a Text component, we can use a prop "name" as props to control its appearance. We also apply the StyleSheet to the component which is used as our component.
+
+**App.js**
+
+**Example:**
+
+```
+ import React, { Component } from 'react';  
+import { StyleSheet, Text, View } from 'react-native'; 
+class ChildClass extends Component {  
+  render() {  
+    return (  
+        <View style={{alignItems: 'center'}}>  
+          <Text style={styles.welcome}>Hello {this.props.name}!</Text>  
+        </View>  
+    );  
+  }  
+} 
+export default class ParentsClass extends Component {  
+  render() {  
+    return (  
+        <View style={{alignItems: 'center'}}>  
+          <ChildClass name='Ashu' />  
+          <ChildClass name='Aman' />  
+          <ChildClass name='Max' />  
+        </View>  
+    );  
+  }  
+}  
+const styles = StyleSheet.create({  
+   welcome: {  
+    fontSize: 30,  
+  }  
+});  
+
+```
+
+**Output:**
+
+![propsexample2](/Images/Screenshot%20(57).png)
