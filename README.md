@@ -1182,3 +1182,65 @@ When USB Debugging is enabled, you can plug in your device and run the code snip
 The Native Android emulator is slow. We recommend downloading Genymotion for testing your app.
 
 The developer menu can be accessed by pressing command + M.
+
+## React Native View
+
+The View is the fundamental component of React Native for building a user interface. It is a container that supports layout with flexbox, style, touch handling, and accessibility controls. It maps directly to the native view similar to whatever platform on React Native app is running on. It displays the components regardless with UIView, <div>, android.view, etc.
+
+View component can be nested, contains other views inside it. It can contain 0 to many children of any type.
+
+**Example:** Now let’s implement the view component. Here we created a view component inside that component we can put any API but here we will put an alert button and when someone clicks on that button an alert will pop up.
+
+**App.js**
+
+```
+
+import React from 'react';
+import { StyleSheet,
+		Text,
+		View,
+		Button,
+		Alert
+		} from 'react-native';
+
+export default function App() {
+
+// Alert function
+const alert = ()=>{
+	Alert.alert(
+	"GeeksforGeeks",
+	"A Computer Science Portal",
+	[
+		{
+		text: "Cancel",
+		},
+		{
+		text: "Agree",
+		}
+	]
+	);
+}
+
+return (
+	<View style={styles.container}>
+	<Button title={"Register"} onPress={alert}/>
+	</View>
+);
+}
+
+const styles = StyleSheet.create({
+container: {
+	flex: 1,
+	backgroundColor: 'green',
+	alignItems: 'center',
+	justifyContent: 'center',
+},
+});
+
+
+```
+**Output:**
+
+![View](/Images/view.png)
+
+![View2](/Images/view2.png)
