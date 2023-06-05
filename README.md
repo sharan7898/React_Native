@@ -924,3 +924,85 @@ AppRegistry.registerComponent('AwesomeProject', () => ScrolledViewExample);
 **OutPut:**
 
 ![ScrollviewHorizontal](/Images/ScrollviewH.png)
+
+## React Native Button
+
+Most users interact with mobile through touches. There are combinations of gestures that work on it, such as tapping on the button, zooming the map, scrolling a list, etc. A button is one of the components that work on its click.
+
+React Native Button is a basic component that works by clicking on it. It imports the Button class of react-native.
+
+**React Native Button Example**
+
+In this example, we will work on the button component. React Native Button component imports the Button class of react-native library. It has several props such as title, onPress, accessibilityLabel, etc. which are mentioned above.
+
+In the previous article Positioning Element with Flex, we learned how to position elements in View.
+
+In the below code the title prop sets the title of a button, onPress prop calls the mention function and performs an event. The color prop sets the color of the button, and disabled={true} makes the button to disable.
+
+**App.js**
+
+```
+
+import React, { Component } from 'react';  
+import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';  
+  
+export default class ButtonBasics extends Component {  
+    onPressButton() {  
+        Alert.alert('You clicked the button!')  
+    }  
+  
+    render() {  
+        return (  
+            <View style={styles.container}>  
+                <View style={styles.buttonContainer}>  
+                    <Button  
+                        onPress={this.onPressButton}  
+                        title="Press Me"  
+                    />  
+                </View>  
+                <View style={styles.buttonContainer}>  
+                    <Button  
+                        onPress={this.onPressButton}  
+                        title="Press Me"  
+                        color="#009933"  
+                    />  
+                </View>  
+                <View style={styles.multiButtonContainer}>  
+                    <Button  
+                        onPress={this.onPressButton}  
+                        title="A disabled button"  
+                        disabled={true}  
+                    />  
+                    <Button  
+                        onPress={this.onPressButton}  
+                        title="OK!"  
+                        color="#009933"  
+                    />  
+                </View>  
+            </View>  
+        );  
+    }  
+}  
+  
+const styles = StyleSheet.create({  
+    container: {  
+        flex: 1,  
+        justifyContent: 'center',  
+    },  
+    buttonContainer: {  
+        margin: 20  
+    },  
+    multiButtonContainer: {  
+        margin: 20,  
+        flexDirection: 'row',  
+        justifyContent: 'space-between'  
+    }  
+})
+
+```
+**OutPut:**
+
+![button](/Images/button.png)
+
+![button1](/Images/button1.png)
+
