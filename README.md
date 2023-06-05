@@ -72,7 +72,7 @@ After installing Android Studio, you need to open it and install the Android SDK
 
 Click on More Actions
 
-![installation3](/Images/Screenshot%20(39).png)
+![installation3](/React_Native.code-workspaceImages/Screenshot%20(39).png)
 
 Select SDK Manager and  select the versions to apply as shown in image:
 
@@ -127,3 +127,57 @@ https://www.youtube.com/watch?v=4wT_f-ku7MQ&t=449s
 Offical Website environment setup:
 
 https://reactnative.dev/docs/environment-setup?guide=native
+
+## React Native State
+
+In React Native, for data that is going to change, we have to use state. You can think of it as a variable. It allows us to store data and also change it when we want.
+
+Whenever you define a state, you need to provide an initial value for it. After that, you can use setState function provided by React Native to change it whenever you want. Whenever setState is called and state changes, it will re-render the component in which it’s being used.
+
+To use state, you need to import useState from “react”.
+
+**Example 1**: Open App.js file and write the below code in that file.
+
+Note: We will create a state called message. We will provide an empty string as the initial value for this state. There will be one TextInput which allows user to insert any text message. We will save this text string in message state using setMessage function. And when user hit the submit button on keyboard, an alert will show with the message.
+
+**App.js**
+
+**Code**:
+
+```
+
+import { StyleSheet, SafeAreaView, Text, TextInput } from "react-native";
+import { useState } from "react";
+export default function App() {
+	const [message, setMessage] = useState("");
+	return (
+		<SafeAreaView style={styles.container}>
+			<TextInput
+				placeholder="Enter message here"
+				value={message}
+				onChangeText={(text) => setMessage(text)}
+				style={styles.input}
+				onSubmitEditing={() => alert(message)}
+			/>
+		</SafeAreaView>
+	);
+}
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: "#fff",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	input: {
+		fontSize: 20,
+		color: "#228B22",
+		fontWeight: "bold"
+	},
+});
+
+```
+
+**OutPut:**
+
+![stateExample](/Images/state%20ex.png)
