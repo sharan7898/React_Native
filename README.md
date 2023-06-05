@@ -1455,3 +1455,27 @@ AppRegistry.registerComponent('App', () => ActivityIndicatorDemo)
 **OutPut:**
 
 ![ActivityIndicator](/Images/ActivityIndicator.png)
+
+## React Native StatusBar
+
+React Native StatusBar is a component which is used to decorate status bar of the app. It is used by importing the StatusBar component from the react-native library. We can use multiple StatusBar at the 
+same time.
+
+Code:
+
+<View>  
+   <StatusBar  
+     backgroundColor = "#b3e6ff"  
+     barStyle = "dark-content"   
+   />  
+</View>  
+<View>  
+  <StatusBar   
+     backgroundColor = "#b3e6ff"  
+     barStyle = "dark-content"   
+  />  
+  <View>  
+    <StatusBar   
+       hidden={route.statusBarHidden} />  
+  </View>  
+</View>
