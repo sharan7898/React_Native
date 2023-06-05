@@ -1518,3 +1518,53 @@ AppRegistry.registerComponent('App', () => ActivityIndicatorDemo)
 OutPut:
 
 ![statusBar](/Images/Statusbar.png)
+
+## React Native Switch
+
+React Native Switch is a Boolean control component which sets its value to true or false. It has an onValueChange callback method that updates its value prop. If the value prop is not changed, the Switch component continues supplied the value prop instead of the expected result of any user actions.
+
+**Example**
+
+In this example, we initialy set the Switch value to false and display a Text with 'off'. When the value of Switch change to true by calling onValueChange the Text component is reset to 'on'.
+
+**App.js**
+
+```
+import React, { Component } from 'react'  
+import {StyleSheet, Switch, View, Text} from 'react-native'  
+  
+export default class SwitchExample extends Component {  
+    state = {  
+        switchValue: false  
+    };  
+    render() {  
+        return (  
+            <View style={styles.container}>  
+                <Text style={styles.textStyle}>Switch Example</Text>  
+                <Text style={styles.textStyle}>{this.state.switchValue ? 'on' :'off'}</Text>  
+                <Switch  
+                    value={this.state.switchValue}  
+                    onValueChange ={(switchValue)=>this.setState({switchValue})}/>  
+            </View>  
+        );  
+    }  
+}  
+const styles = StyleSheet.create ({  
+     container: {  
+         flex: 1,  
+         alignItems: 'center',  
+         justifyContent: 'center',  
+     },  
+    textStyle:{  
+        margin: 24,  
+        fontSize: 25,  
+        fontWeight: 'bold',  
+        textAlign: 'center',  
+        color: '#344953'  
+    }  
+})
+
+```
+**OutPut:**
+
+![Switch](/Images/Switchbar.png)
