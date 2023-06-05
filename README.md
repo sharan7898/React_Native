@@ -770,3 +770,75 @@ Whenever we type in one of the input fields, the state will be updated. When we 
 Whenever we type in one of the input fields, the state will be updated. When we click on the Submit button, text from inputs will be shown inside the dialog box.
 
 ![TextInput3](/Images/Textinput3.png)
+
+## React Native ScrollView
+
+The ScrollView is a generic scrollable container, which scrolls multiple child components and views inside it. 
+
+In the ScrollView, we can scroll the components in both direction vertically and horizontally. By default, the ScrollView container scrolls its components and views in vertical. 
+
+To scroll its components in horizontal, it uses the props horizontal: true (default, horizontal: false).
+
+**React Native ScrollView Example**
+
+In this example, we create a vertical ScrollView using Text and Button components.
+
+**App.js**
+
+```
+
+import React, { Component } from 'react';  
+import { AppRegistry, ScrollView, Image, Text, Button, StyleSheet } from 'react-native';  
+  
+export default class ScrolledViewExample extends Component {  
+    onPressButton() {  
+        alert('You clicked the button!')  
+    }  
+  
+    render() {  
+        return (  
+            <ScrollView >  
+                <Text style={{fontSize:20}}>Scroll me plz</Text>  
+                <Button title={'Button 1'} onPress={this.onPressButton} />  
+                <Text style={{fontSize:20}}>React Native Example of ScrollView</Text>  
+                <Button title={'Button 2'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>React Native ScrollView Example</Text>  
+                <Button title={'Button 3'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>If you like</Text>  
+                <Button title={'Button 4'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>Scrolling down</Text>  
+                <Button title={'Button 5'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>Scrolling down</Text>  
+                <Button title={'Button 6'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>What's the best</Text>  
+                <Button title={'Button 7'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>What's the best</Text>  
+                <Button title={'Button 8'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>Framework around?</Text>  
+                <Button title={'Button 9'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>Framework around?</Text>  
+                <Button title={'Button 10'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>React Native</Text>  
+                <Button title={'Button 11'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>Scroll me plz</Text>  
+                <Button title={'Button 12'} onPress={this.onPressButton} />  
+                <Text style={{fontSize:20}}>Scroll me plz</Text>  
+                <Button title={'Button 13'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>If you like</Text>  
+                <Button title={'Button 14'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>If you like</Text>  
+                <Button title={'Button 15'} onPress={this.onPressButton}/>  
+                <Text style={{fontSize:20}}>Scrolling down</Text>  
+                <Button title={'Button 16'} onPress={this.onPressButton}/>  
+            </ScrollView>  
+        );  
+    }  
+}  
+// skip this line if you are using Create React Native App  
+AppRegistry.registerComponent('AwesomeProject', () => ScrolledViewExample);
+
+```
+
+**OutPut:**
+
+![ScrollViewVertical](/Images/ScrollView.png)
