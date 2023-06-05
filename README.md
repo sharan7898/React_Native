@@ -1244,3 +1244,27 @@ container: {
 ![View](/Images/view.png)
 
 ![View2](/Images/view2.png)
+
+## React Native WebView
+
+React Native WebView is a component which is used to load web content or web page. The WebView component is imports form core react-native library. Now, the WebView is replaced from the built-in core react-native, and placed in react-native-webview library.
+
+Types of WebView contents:
+
+**Display HTML code as a string**: The HTML string code is passed into html prop inside source property.
+
+1.<WebView  
+2.source={{html: '<h1>Hello github</h1>'}}  
+3./>  
+
+**Display the internal web page:** Create an internal web page inside a directory and pass its full path in source property.
+
+1.<WebView  
+2.source={require("./resources/index.html")}  
+3./>  
+
+Display the remote web page: A remote web page is loaded using uri tag with source property.
+
+1.<WebView  
+2.source = {{ uri:'https://www.github.com' }}  
+3./>
