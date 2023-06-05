@@ -1117,3 +1117,37 @@ export default App;
 ![Animated](/Images/Animated1.png)
 
 ![Animated2](/Images/Animated2.png)
+
+#### Example 2
+
+**Interpolation:** Let’s suppose we want to use “%” instead of a number for defining our right style property.If we pass “%” as in <Animated.View> and try to change it in our Animated.timing() function we will get an error. This is where interpolation helps.It maps input ranges to output ranges(E.g. 0-100 into 0%-100%).We just have to apply interpolation in <Animated.View> right style prop and the rest of the code will be the same.
+
+**Example:**
+
+**App.js**
+
+```
+<Animated.View
+style={{
+	marginTop: '30%',
+	backgroundColor: 'red',
+	height: 200,
+	width: 200,
+	right: this.state.right.interpolate({
+	inputRange: [0, 100],
+	outputRange: ['0%', '100%'],
+	}),
+	position: 'absolute',
+	justifyContent: 'center',
+	borderRadius: this.state.radius,
+}}>
+<Text
+	style={{
+	textAlign: 'center',
+	color: 'white',
+	}}>
+	Animated View
+</Text>
+</Animated.View>
+
+```
