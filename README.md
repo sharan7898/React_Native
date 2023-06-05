@@ -1568,3 +1568,61 @@ const styles = StyleSheet.create ({
 **OutPut:**
 
 ![Switch](/Images/Switchbar.png)
+
+## React Native Alert
+
+We are going to see how to create an alert in react-native. For this, we are going to use React Native Alert API. It’s basically a small window that pops up to get the user’s choice.
+
+It is an API that uses the alert method to show up the alert dialog box. This dialog box can have three buttons which are positive, negative, and neutral for performing different actions.
+
+**Example**: Now lets implement the alert functionality. Here we created a button and when someone clicks on that button an alert will pop up.
+
+**App.js**
+
+```
+import React from 'react';
+import { StyleSheet,
+		Text,
+		View,
+		Button,
+		Alert
+		} from 'react-native';
+
+export default function App() {
+
+// Alert function
+const alert = ()=>{
+	Alert.alert(
+	"GeeksforGeeks",
+	"How are you!",
+	[
+		{
+		text: "Cancel",
+		},
+		{
+		text: "OK",
+		}
+	]
+	);
+}
+
+return (
+	<View style={styles.container}>
+	<Button title={"Click me"} onPress={alert}/>
+	</View>
+);
+}
+
+const styles = StyleSheet.create({
+container: {
+	flex: 1,
+	backgroundColor: '#fff',
+	alignItems: 'center',
+	justifyContent: 'center',
+},
+});
+
+```
+OutPut:
+
+![Alert](/Images/Alert.png)
