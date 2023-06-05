@@ -1268,3 +1268,40 @@ Display the remote web page: A remote web page is loaded using uri tag with sour
 1.<WebView  
 2.source = {{ uri:'https://www.github.com' }}  
 3./>
+
+## Example
+
+in this example, we will load the web page by passing its URL in source prop of WebView component.
+
+**App.js**
+
+```
+
+import React, { Component } from 'react'  
+import {  
+    View,WebView,StyleSheet,AppRegistry  
+} from 'react-native'  
+  
+export default class ActivityIndicatorDemo extends Component {  
+    render() {  
+        return (  
+        <View style = {styles.container}>  
+            <WebView  
+                source = {{ uri:'https://www.github.com/login' }}  
+            />  
+        </View>  
+        )  
+    }  
+}  
+const styles = StyleSheet.create({  
+    container: {  
+        flex: 1,  
+    }  
+})  
+  
+AppRegistry.registerComponent('App', () => ActivityIndicatorDemo) 
+
+```
+**OutPut:**
+
+![webview](/Images/webview.png)
