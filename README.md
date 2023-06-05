@@ -1151,3 +1151,34 @@ style={{
 </Animated.View>
 
 ```
+## React Native Running IOS and Android
+
+**IOS**
+
+If you want to test your app in the IOS simulator, all you need is to open the root folder of your app in terminal and run −
+
+**react-native run-ios**
+
+The above command will start the simulator and run the app.
+
+We can also specify the device we want to use.
+
+**react-native run-ios --simulator** " iPhone 5s
+
+After you open the app in simulator, you can press command + D on IOS to open the developers menu. You can check more about this in our debugging chapter.
+
+You can also reload the IOS simulator by pressing command + R.
+
+**Android**
+
+We can run the React Native app on Android platform by running the following code in the terminal.
+
+**react-native run-android**
+
+Before you can run your app on Android device, you need to enable USB Debugging inside the Developer Options.
+
+When USB Debugging is enabled, you can plug in your device and run the code snippet given above.
+
+The Native Android emulator is slow. We recommend downloading Genymotion for testing your app.
+
+The developer menu can be accessed by pressing command + M.
