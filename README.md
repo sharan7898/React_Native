@@ -346,3 +346,50 @@ const styles = StyleSheet.create({
 **Output:**
 
 ![propsexample2](/Images/Screenshot%20(57).png)
+
+## React Native Style
+
+There are a couple of ways to style your elements in React Native.
+
+You can use the style property to add the styles inline. However, this is not the best practice because it can be hard to read the code.
+Another way , is to use the Stylesheet for styling.
+
+**Example 1**
+
+In this example, we will use both inline style as well as StyleSheet.create. Inline styles are applied at where the components are created.
+
+**App.js**
+
+```
+
+ import React, { Component } from 'react';  
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';  
+export default class ImplementingStyle extends Component {  
+    render() {  
+        return (  
+            <View>  
+                <Text style={{ backgroundColor: '#a7a6a9', color: 'yellow', fontSize: 20 }}>this is inline style</Text>  
+                <Text style={styles.green}>just green</Text>  
+                <Text style={styles.biggray}>just biggray</Text>  
+                <Text style={[styles.biggray, styles.green]}>biggray, then green</Text>  
+                <Text style={[styles.green, styles.biggray]}>green, then biggray</Text>  
+            </View>  
+        );  
+    }  
+}  
+const styles = StyleSheet.create({  
+    biggray: {  
+        color: 'gray',  
+        fontWeight: 'bold',  
+        fontSize: 30,  
+    },  
+    green: {  
+        color: 'green',  
+    },  
+});
+
+```
+
+**Output:**
+
+![Styleeaxmple1](/Images/style1.png)
