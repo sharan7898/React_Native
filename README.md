@@ -1006,3 +1006,16 @@ const styles = StyleSheet.create({
 
 ![button1](/Images/button1.png)
 
+## React Native Animation
+
+React Native has an Animated API that handles animations in the app. It has various functions to create most types of animation(E.g Fading, color change, width and Height change, position change). We will mostly be using Animated.parallel, Animated.timing, Animated.value, and Animated.View this example.
+
+**Steps to Create Animation:**
+
+1.Defining State: We will import Animated from ‘react-native’.Then we will declare our state that will be later changed by the animate function. In this, we are using “right” which will shift the <Animated.View> from left-to-right and vice-versa. And “radius” state which will change borderRadius of the View during animation.
+
+2.Defining Animation functions: We will define two functions leftToRight and rightToLeft which will animate the View when called. In this, we are using Animated.parallel() function which is used to run multiple animations simultaneously. And Animated.timing() function which takes state, duration of the animation, final value as parameter. The Start() for starting the animation.
+
+3.Creating the View: Now we will create a View using <Animated.View> and in style pass the animation state.
+
+Note: Use <Animated.View> for creating a View that will animate based on animated state.Normal <View> will throw Stack limit exceeded error.
