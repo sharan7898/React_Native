@@ -452,3 +452,69 @@ export default class App extends React.Component {
 **Output:**
 
 ![Style2](/Images/Style2.png)
+
+## React Native FlexBox
+
+To accommodate different screen sizes, React Native offers Flexbox support.
+
+We will use the same code that we used in our React Native - Styling chapter. We will only change the PresentationalComponent.
+
+Layout
+
+To achieve the desired layout, flexbox offers three main properties − flexDirection justifyContent and alignItems.
+
+|Property|	Values	| Description |
+|---------|---------|-------------|
+|flexDirection	|'column', 'row'|	Used to specify if elements will be aligned vertically or horizontally.|
+|justifyContent	|'center', 'flex-start', 'flex-end', 'space-around', 'space-between'|	Used to determine how should elements be distributed inside the container.|
+|alignItems	|'center', 'flex-start', 'flex-end', 'stretched' |	Used to determine how should elements be distributed inside the container along the secondary axis (opposite of flexDirection)|
+
+If you want to align the items vertically and centralize them, then you can use the following code.
+
+
+**App.js**
+
+```
+
+import React, { Component } from 'react'
+import { View, StyleSheet } from 'react-native'
+const Home = (props) => {
+   return (
+      <View style = {styles.container}>
+         <View style = {styles.redbox} />
+         <View style = {styles.bluebox} />
+         <View style = {styles.blackbox} />
+      </View>
+   )
+}
+export default Home
+const styles = StyleSheet.create ({
+   container: {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'grey',
+      height: 600
+   },
+   redbox: {
+      width: 100,
+      height: 100,
+      backgroundColor: 'red'
+   },
+   bluebox: {
+      width: 100,
+      height: 100,
+      backgroundColor: 'blue'
+   },
+   blackbox: {
+      width: 100,
+      height: 100,
+      backgroundColor: 'black'
+   },
+})
+
+```
+
+**Output:**
+
+![Flexbox](/Images/Flexbox.png)
