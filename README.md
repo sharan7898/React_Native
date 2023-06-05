@@ -1479,3 +1479,42 @@ Code:
        hidden={route.statusBarHidden} />  
   </View>  
 </View>
+
+#### Example 1
+
+Let's create a simple StatusBar example in which we change its background color.
+
+**App.js**
+
+```
+
+import React, { Component } from 'react'  
+import {  
+    View,StyleSheet,AppRegistry,StatusBar  
+} from 'react-native'  
+export default class ActivityIndicatorDemo extends Component {  
+    render() {  
+        return (  
+            <View style = {styles.container}>  
+                <StatusBar  
+                    backgroundColor = "#b3e6ff"  
+                    barStyle = "dark-content"   
+                    hidden = {false}    
+                    translucent = {true}  
+                />  
+            </View>  
+        )  
+    }  
+}  
+const styles = StyleSheet.create({  
+    container: {  
+        flex: 1,  
+    }  
+})  
+AppRegistry.registerComponent('App', () => ActivityIndicatorDemo)
+
+```
+
+OutPut:
+
+![statusBar](/Images/Statusbar.png)
