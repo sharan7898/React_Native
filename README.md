@@ -1019,3 +1019,101 @@ React Native has an Animated API that handles animations in the app. It has vari
 3.Creating the View: Now we will create a View using <Animated.View> and in style pass the animation state.
 
 Note: Use <Animated.View> for creating a View that will animate based on animated state.Normal <View> will throw Stack limit exceeded error.
+
+#### Example 1
+
+**App.js**
+
+```
+
+import React, { Component } from 'react';
+import { Text, View, Animated, Dimensions, Button } from 'react-native';
+
+class App extends Component {
+constructor(props) {
+	super(props);
+	this.state = {
+	right: new Animated.Value(
+		Dimensions.get('window').width - 200),
+	radius: new Animated.Value(0),
+	};
+}
+leftToRight = () => {
+	Animated.parallel([
+	Animated.timing(this.state.radius, {
+		toValue: 200,
+		duration: 1000,
+		useNativeDriver: false,
+	}),
+	Animated.timing(this.state.right, {
+		toValue: 0,
+		duration: 1000,
+		useNativeDriver: false,
+	}),
+	]).start();
+};
+rightToLeft = () => {
+	Animated.parallel([
+	Animated.timing(this.state.radius, {
+		toValue: 0,
+		duration: 1000,
+		useNativeDriver: false,
+	}),
+	Animated.timing(this.state.right, {
+		toValue: Dimensions.get('window').width - 200,
+		duration: 1000,
+		useNativeDriver: false,
+	}),
+	]).start();
+};
+
+render() {
+	return (
+	<View style={{ flex: 1 }}>
+<Animated.View
+		style={{
+marginTop: '30%',
+			backgroundColor: 'red',
+			height: 200,
+			width: 200,
+			right: this.state.right,
+			position: 'absolute',
+			justifyContent: 'center',
+			borderRadius: this.state.radius,
+		}}>
+<Text
+			style={{
+			textAlign: 'center',
+			color: 'white',
+			}}>
+			Animated View
+		</Text>
+		</Animated.View>
+		<View
+style={{
+			position: 'absolute',
+			bottom: 0,
+			width: '100%',
+			height: '20%',
+			justifyContent: 'space-evenly',
+		}}>
+Button title="Left to right"
+onPress={() => this.leftToRight()} />
+<Button title="right to left"
+			onPress={() => this.rightToLeft()} />
+
+  );    
+}
+}
+
+export default App;
+
+
+```
+
+
+**OutPut:**
+
+![Animated](/Images/Animated1.png)
+
+![Animated2](/Images/Animated2.png)
