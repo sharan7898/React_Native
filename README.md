@@ -181,3 +181,72 @@ const styles = StyleSheet.create({
 **OutPut:**
 
 ![stateExample](/Images/state%20ex.png)
+
+#### Example 2:
+
+Let's create another example of state data in which we interchange the Text value "Show" and "Hide" to show and hide the input password.
+
+Create three state variables that will be changed by clicking the Text component defined as a state. Clicking the Text component calls the handleToggle function, and the current state of Boolean variable "isPasswordVisible" is assigned in it. Here, if the condition checks the value of "isPasswordVisible" and proceeds accordingly.
+
+**App.js**
+
+**Code:**
+
+```
+
+import React, { Component } from 'react';  
+import {StyleSheet,Text,View,TextInput,TouchableOpacity} from 'react-native';  
+  
+export default class App extends Component {  
+    state: {  
+        password: string,  
+        isPasswordVisible: boolean,  
+        toggleText: string,  
+    }  
+    constructor(props: Props) {  
+        super(props);  
+        this.state = {  
+            password: '',  
+            isPasswordVisible: true,  
+            toggleText: 'Show',  
+        };  
+    }  
+    handleToggle = () => {  
+        const { isPasswordVisible } = this.state;  
+        if (isPasswordVisible) {  
+            this.setState({ isPasswordVisible: false });  
+            this.setState({ toggleText: 'Hide' });  
+        } else {  
+            this.setState({ isPasswordVisible: true });  
+            this.setState({ toggleText: 'Show' });  
+        }  
+    };  
+    render() {  
+        return (  
+            <View style={styles.container}>  
+                <TextInput  
+                    secureTextEntry={this.state.isPasswordVisible}  
+                    style={{ width: 400, height: 50, backgroundColor: '#a7a6a9', color: 'white', fontSize: 20 }}  
+                />  
+                <TouchableOpacity onPress={this.handleToggle}>  
+                    <Text  style={{fontSize: 20}}>{this.state.toggleText}</Text>  
+                </TouchableOpacity>  
+            </View>  
+        );  
+    }  
+}  
+const styles = StyleSheet.create({  
+    container: {  
+        flex: 1,  
+        justifyContent: 'center',  
+        alignItems: 'center',  
+    }  
+});
+
+```
+
+**OutPut:**
+
+![stateexample2](/Images/state%20ex1%20(1).png)
+
+![stateexample3](/Images/state%20ex1%20(2).png)
