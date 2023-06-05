@@ -393,3 +393,62 @@ const styles = StyleSheet.create({
 **Output:**
 
 ![Styleeaxmple1](/Images/style1.png)
+
+#### Example 2
+
+We can also use the external JavaScript file to style our application. In this example, we create external JS file and import it into our App.js file.
+
+**StyleComponent.js**
+
+```
+
+import React, { Component } from 'react'  
+import { Text, View, StyleSheet } from 'react-native' 
+const StyleComponent = (props) => {  
+    return (  
+        <View>  
+            <Text style = {styles.myState}>  
+                {props.myState}  
+            </Text>  
+        </View>  
+    )  
+}  
+export default StyleComponent    
+const styles = StyleSheet.create ({  
+    myState: {  
+        marginTop: 20,  
+        textAlign: 'center',  
+        color: 'green',  
+        fontWeight: 'bold',  
+        fontSize: 20  
+    }  
+}) 
+
+```
+
+**App.js**
+
+```
+
+ import React from 'react';  
+import { StyleSheet, Text, View } from 'react-native';  
+import StyleComponent from './StyleComponent'  
+  
+export default class App extends React.Component {  
+    state = {  
+        myState: 'This is my state, style through external style'  
+    }  
+    render() {  
+        return (  
+            <View>  
+                <StyleComponent myState = {this.state.myState}/>  
+            </View>  
+        );  
+    }  
+} 
+
+```
+
+**Output:**
+
+![Style2](/Images/Style2.png)
