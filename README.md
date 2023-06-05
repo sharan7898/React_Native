@@ -31,3 +31,5 @@ Follow are the advantages of React Native −
 * Improving with Time: Some features of iOS and Android are still not supported, and the community is always inventing the best practices.
 
 * Existence is Uncertain: As the Facebook develop this framework, its presence is uncertain since it keeps all the rights to kill off the project anytime. As the popularity of React Native rises, it is unlikely to happen.
+
+## Installation and setup
