@@ -54,7 +54,7 @@ If you have already installed Node on your system, make sure it is Node 14 or ne
 
 After installation confirm the version by opening the command terminal:
 
-![installation1](Images/Screenshot%20(37).png)
+![Installation1](/Images/Installation1.png)
 
 **node –v**
 
@@ -68,17 +68,17 @@ Android Studio is the official Integrated Development Environment (IDE) for Andr
 
 After installing Android Studio, you need to open it and install the Android SDK for the version of Android you want to target. You can do this by going to the "SDK Manager" in Android Studio and selecting the appropriate SDK version.
 
-![installation2](/Images/Screenshot%20(38).png)
+![installation2](/Images/Installation2.png)
 
 Click on More Actions
 
-![installation3](/React_Native.code-workspaceImages/Screenshot%20(39).png)
+![installation3](/Images/Installation3.png)
 
 Select SDK Manager and  select the versions to apply as shown in image:
 
-![installation4](/Images/Screenshot%20(40).png)
+![installation4](/Images/Installation4.png)
 
-![installation5](/Images/Screenshot%20(41).png)
+![installation5](/Images/Installation5.png)
 
 Note: After this step Edit the System Environment
 
@@ -91,7 +91,7 @@ To set up your development environment, Create folder in the localdisk ,you need
 
 **npm install -g react-native**
 
-![installation6](/Images/Screenshot%20(44).png)
+![installation6](/Images/installation6.png)
 
 This will install the React Native CLI globally on your computer, which you can use to create and manage React Native projects.
 
@@ -101,23 +101,23 @@ To create a new React Native project, open a terminal or command prompt and run 
 
 **react-native init demo**
 
-![installation6](/Images/Screenshot%20(45).png)
+![installation6](/Images/installation7.png)
 
 Open The Visual Studio in the same folder(demo) and open the terminal write the following code:
 
 **npx  react-native start**
 
-![installation7](/Images/Screenshot%20(46).png)
+![installation7](/Images/installation8.png)
 
 Following by this command in a new terminal:
 
 **npx react-native run-android** 
 
-![installation8](/Images/Screenshot%20(47).png)
+![installation8](/Images/installation9.png)
 
 This will build your app and run it in the Android emulator or on a connected Android device.
 
-![installation9](/Images/Screenshot%20(48).png)
+![installation9](/Images/installation10.png)
 
 Note:
 For Complete Installation go through this video:
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
 
 **OutPut:**
 
-![stateExample](/Images/state%20ex.png)
+![stateExample](/Images/state.png)
 
 #### Example 2:
 
@@ -247,9 +247,9 @@ const styles = StyleSheet.create({
 
 **OutPut:**
 
-![stateexample2](/Images/state%20ex1%20(1).png)
+![stateexample2](/Images/state1.png)
 
-![stateexample3](/Images/state%20ex1%20(2).png)
+![stateexample3](/Images/state2.png)
 
 ## React Native Props
 
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
 
 **Output:**
 
-![props-example](/Images/Screenshot%20(56).png)
+![props-example](/Images/props.png)
 
 #### Using props in our own Component
 
@@ -345,7 +345,7 @@ const styles = StyleSheet.create({
 
 **Output:**
 
-![propsexample2](/Images/Screenshot%20(57).png)
+![propsexample2](/Images/props1.png)
 
 ## React Native Style
 
@@ -451,7 +451,7 @@ export default class App extends React.Component {
 
 **Output:**
 
-![Style2](/Images/Style2.png)
+![Style2](/Images/style2.png)
 
 ## React Native FlexBox
 
@@ -1012,13 +1012,13 @@ React Native has an Animated API that handles animations in the app. It has vari
 
 **Steps to Create Animation:**
 
-1.Defining State: We will import Animated from ‘react-native’.Then we will declare our state that will be later changed by the animate function. In this, we are using “right” which will shift the <Animated.View> from left-to-right and vice-versa. And “radius” state which will change borderRadius of the View during animation.
+1.Defining State: We will import Animated from ‘react-native’.Then we will declare our state that will be later changed by the animate function. In this, we are using “right” which will shift the Animated.View from left-to-right and vice-versa. And “radius” state which will change borderRadius of the View during animation.
 
 2.Defining Animation functions: We will define two functions leftToRight and rightToLeft which will animate the View when called. In this, we are using Animated.parallel() function which is used to run multiple animations simultaneously. And Animated.timing() function which takes state, duration of the animation, final value as parameter. The Start() for starting the animation.
 
-3.Creating the View: Now we will create a View using <Animated.View> and in style pass the animation state.
+3.Creating the View: Now we will create a View using Animated.View and in style pass the animation state.
 
-Note: Use <Animated.View> for creating a View that will animate based on animated state.Normal <View> will throw Stack limit exceeded error.
+Note: Use Animated.View for creating a View that will animate based on animated state.Normal View will throw Stack limit exceeded error.
 
 #### Example 1
 
@@ -1455,6 +1455,9 @@ AppRegistry.registerComponent('App', () => ActivityIndicatorDemo)
 **OutPut:**
 
 ![ActivityIndicator](/Images/ActivityIndicator.png)
+
+
+
 
 ## React Native StatusBar
 
