@@ -1540,16 +1540,18 @@ Code:
      barStyle = "dark-content"   
    />  
 </View>  
+
 <View>  
   <StatusBar   
      backgroundColor = "#b3e6ff"  
      barStyle = "dark-content"   
   />  
-  <View>  
+<View>  
     <StatusBar   
        hidden={route.statusBarHidden} />  
   </View>  
 </View>
+
 
 #### Example 1
 
@@ -1697,3 +1699,109 @@ container: {
 OutPut:
 
 ![Alert](/Images/Alert.png)
+
+## React-Native Text
+
+This component can be nested and it can inherit properties from parent to child. This can be useful in many ways. We will show you example of capitalizing the first letter, styling words or parts of the text, etc.
+
+**Example 1**
+
+**Step 1: Create File**
+
+The file we are going to create is text_example.js
+
+**Step 2: App.js**
+
+In this step, we will just create a simple container.
+
+**App.js**
+
+```
+
+import React, { Component } from 'react'
+import TextExample from './text_example.js'
+
+const App = () => {
+   return (
+      <TextExample/>
+   )
+}
+export default App
+
+```
+
+**Step 3: Text**
+
+In this step, we will use the inheritance pattern. styles.text will be applied to all Text components.
+You can also notice how we set other styling properties to some parts of the text. It is important to know that all child elements have parent styles passed to them.
+
+**text_example.js**
+
+```
+import React, { Component } from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native'
+
+const TextExample = () => {
+   return (
+      <View style = {styles.container}>
+         <Text style = {styles.text}>
+            <Text style = {styles.capitalLetter}>
+               L
+            </Text>
+            
+            <Text>
+               orem ipsum dolor sit amet, sed do eiusmod.
+            </Text>
+            
+            <Text>
+               Ut enim ad <Text style = {styles.wordBold}>minim </Text> veniam,
+               quis aliquip ex ea commodo consequat.
+            </Text>
+            
+            <Text style = {styles.italicText}>
+               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+            </Text>
+            
+            <Text style = {styles.textShadow}>
+               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+               deserunt mollit anim id est laborum.
+            </Text>
+         </Text>
+      
+      </View>
+   )
+}
+export default TextExample
+
+const styles = StyleSheet.create ({
+   container: {
+      alignItems: 'center',
+      marginTop: 100,
+      padding: 20
+   },
+   text: {
+      color: '#41cdf4',
+   },
+   capitalLetter: {
+      color: 'red',
+      fontSize: 20
+   },
+   wordBold: {
+      fontWeight: 'bold',
+      color: 'black'
+   },
+   italicText: {
+      color: '#37859b',
+      fontStyle: 'italic'
+   },
+   textShadow: {
+      textShadowColor: 'red',
+      textShadowOffset: { width: 2, height: 2 },
+      textShadowRadius : 5
+   }
+})
+
+```
+**OutPut:**
+
+![text](/Images/text.png)
