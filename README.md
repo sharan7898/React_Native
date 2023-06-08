@@ -925,6 +925,95 @@ AppRegistry.registerComponent('AwesomeProject', () => ScrolledViewExample);
 
 ![ScrollviewHorizontal](/Images/ScrollviewH.png)
 
+## React Native Images
+
+We are going to see how to add images in react-native. For this, we are going to use the Image component. It is used to add images in react-native. The image can be loaded from different source such as static resources, temporary local files, local disc, network images, etc.
+
+**Static Image Resources**
+
+The static images are added in app by placing it in somewhere in the source code directory and provide its path as:
+
+
+**<Image source={require('./icon_name.png')} />**  
+
+
+In the above syntax, the packager will look for icon_name.png in the same folder as the component that requires it. To load the image on a specific platform, it should be named by specifying the platform as extensions such as icon_name.ios.png and icon_name.android.png.
+
+  
+**Network Images**
+
+The dynamic and network images are also be displayed in the Image component. To access the network image, it is required to specify the dimensions of image manually.
+
+It is recommended to use https in order to satisfy the App Transport Security requirements on iOS.
+
+// GOOD  
+<Image source={{uri: 'https://url_of_image.png'}}  
+       style={{width: 60, height: 60}} /> 
+  
+// BAD  
+<Image source={{uri: 'https://url_of_image.png'}} />  
+
+**Uri Data Images**
+
+The encoded image data use the "data:" uri scheme in the image component. The data image also required to specify the dimension of the image.
+
+<Image  
+    style={{width: 66, height: 66}}  
+    source={{uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='}}  
+/>  
+
+**Background Image via Nesting**
+
+The background image is set using the ImageBackground component. It is also the same props as Image. We can add any component as children on the top of it.
+
+return (  
+  <ImageBackground source={...} style={{width: '100%', height: '100%'}}>  
+    <Text>Inside</Text>  
+  </ImageBackground>  
+)
+
+#### Example
+
+**App.js**
+
+```
+
+import React , {useState} from 'react';
+import { StyleSheet, View ,Image , Button } from 'react-native';
+export default function App() {
+const [image , setImage] = useState(false);
+return (
+	<View style={styles.container}>
+	<View style={!image && styles.image}>
+		<Image source=
+{require('./images/images.jpg')}
+		/>
+	</View>
+	<Button
+		title={"click"}
+		onPress={()=>{setImage(!image)}}
+	/>
+	</View>
+);
+}
+const styles = StyleSheet.create({
+container: {
+	flex: 1,
+	alignItems: 'center',
+	justifyContent: 'center',
+},
+image : {
+	display : "none",
+}
+});
+
+```
+**Output**
+
+![image1](/Images/image1.png)
+
+
+
 ## React Native Button
 
 Most users interact with mobile through touches. There are combinations of gestures that work on it, such as tapping on the button, zooming the map, scrolling a list, etc. A button is one of the components that work on its click.
