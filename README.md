@@ -82,6 +82,26 @@ Select SDK Manager and  select the versions to apply as shown in image:
 
 Note: After this step Edit the System Environment
 
+The React Native tools require some environment variables to be set up in order to build apps with native code.
+
+1.Open the Windows Control Panel.
+2.Click on User Accounts, then click User Accounts again
+3.Click on Change my environment variables
+4.Click on New... to create a new ANDROID_HOME user variable that points to the path to your Android SDK:
+
+![edit1](/Images/environmentvariable.png)
+
+1.Open the Windows Control Panel.
+2.Click on User Accounts, then click User Accounts again
+3.Click on Change my environment variables
+4.Select the Path variable.
+5.Click Edit.
+6.Click New and add the path to platform-tools to the list.
+
+![edit2](/Images/edit2.png)
+
+
+
 Please refer the video for the complete Installation Process:
 (167) React Native Environment setup for windows | 2022-23 |Windows 11 | Mr DevGeek | Muhammad Aamir Malik - YouTube
 
